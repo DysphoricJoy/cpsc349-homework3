@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f0f0f0; color: #111; }
+.site-header { padding: 20px; background: #253442; color: white; text-align: center; }
+h1 { font-size: 3rem; }
+.controls { display: flex; justify-content: center; gap: 15px; padding: 20px; background: #2a3d52; }
+.controls input, .controls select {
+  width: 190px; min-width: 0; padding: 10px; font-family: inherit; font-size: 14px;
+  border: 1px solid #ccc; border-radius: 5px; background: white; color: #111;
+}
+.movie-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; padding: 20px; }
+.movie-card { padding: 15px; text-align: center; background: #fcfcfc; border-radius: 10px; box-shadow: 0 4px 8px rgb(0 0 0 / 10%); }
+.poster { display: block; width: 200px; height: 300px; max-width: 100%; margin: 0 auto; border-radius: 10px; object-fit: cover; }
+.poster-placeholder { display: flex; align-items: center; justify-content: center; background: #ccc; color: #444; padding: 12px; }
+.movie-card h2 { font-size: 24px; margin: 20px 0; }
+.movie-card p { font-size: 16px; margin: 16px 0; }
+.pagination { display: flex; align-items: center; justify-content: center; gap: 20px; padding: 20px; }
+.pagination span { font-size: 18px; }
+button { padding: 10px 15px; border: 0; border-radius: 5px; background: #3498db; color: white; font: inherit; cursor: pointer; }
+button:hover:not(:disabled) { background: #2980b9; }
+button:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 3px solid #70b9f2; outline-offset: 3px; }
+.status { padding: 40px 20px; text-align: center; }
+.attribution { padding: 12px 20px 24px; text-align: center; color: #555; font-size: 12px; }
+.attribution p { margin: 10px 0 0; }
+@media (max-width: 1199px) { .movie-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 999px) { .movie-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 739px) { .movie-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } h1 { font-size: 2.5rem; } }
+@media (max-width: 479px) {
+  .movie-grid { grid-template-columns: 1fr; }
+  .controls { gap: 10px; padding: 15px; }
+  .controls input, .controls select { width: 50%; }
+  .pagination { gap: 12px; }
+  .pagination span { font-size: 16px; }
+}
